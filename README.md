@@ -38,8 +38,3 @@
 
 ---
 
-## 💻 Installation & Setup
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/nova-ecommerce.git](https://github.com/your-username/nova-ecommerce.git)
