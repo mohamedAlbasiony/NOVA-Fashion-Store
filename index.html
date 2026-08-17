@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA — Fashion Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="Css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        NOVA<span>.</span>
+    </div>
+
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button id="themeBtn" class="icon-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button id="favoriteBtn" class="icon-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span id="favoriteCount">0</span>
+        </button>
+
+        <button id="cartBtn" class="cart-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            NEW COLLECTION 2026
+        </span>
+
+        <h1>
+            Dress Your
+            <span>Confidence.</span>
+        </h1>
+
+        <p>
+            Discover modern fashion pieces designed
+            for your everyday style.
+        </p>
+
+        <button class="primary-btn" id="shopNowBtn">
+            Shop Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+    <div class="hero-slider">
+
+        <div class="slider-track" id="heroSlider">
+
+            <div class="hero-slide active">
+                <img
+                    src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=80"
+                    alt="Fashion"
+                >
+            </div>
+
+            <div class="hero-slide">
+                <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80"
+                    alt="Fashion"
+                >
+            </div>
+
+            <div class="hero-slide">
+                <img
+                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80"
+                    alt="Fashion"
+                >
+            </div>
+
+        </div>
+
+        <div class="slider-controls">
+
+            <button id="prevSlide">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div id="sliderDots"></div>
+
+            <button id="nextSlide">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div>
+        <i class="fa-solid fa-truck-fast"></i>
+
+        <div>
+            <h3>Free Shipping</h3>
+            <p>On orders over $100</p>
+        </div>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-rotate-left"></i>
+
+        <div>
+            <h3>Easy Returns</h3>
+            <p>30 days return policy</p>
+        </div>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <div>
+            <h3>Secure Payment</h3>
+            <p>100% secure checkout</p>
+        </div>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-headset"></i>
+
+        <div>
+            <h3>Support</h3>
+            <p>24/7 customer support</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products" class="products-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span>OUR COLLECTION</span>
+
+            <h2>
+                Find Your
+                <strong>Style.</strong>
+            </h2>
+        </div>
+
+        <p id="productResult">
+            Discover our latest collection.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="controls">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+        </div>
+
+
+        <div class="filter-buttons" id="categoryButtons">
+
+            <button class="filter-btn active" data-category="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-category="mens-shirts">
+                Men
+            </button>
+
+            <button class="filter-btn" data-category="tops">
+                Tops
+            </button>
+
+            <button class="filter-btn" data-category="womens-dresses">
+                Dresses
+            </button>
+
+            <button class="filter-btn" data-category="womens-shoes">
+                Shoes
+            </button>
+
+        </div>
+
+
+        <select id="sortSelect">
+
+            <option value="default">
+                Sort By
+            </option>
+
+            <option value="low">
+                Price: Low → High
+            </option>
+
+            <option value="high">
+                Price: High → Low
+            </option>
+
+            <option value="rating">
+                Highest Rated
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div id="productsGrid" class="products-grid">
+
+        <!-- JavaScript -->
+
+    </div>
+
+
+    <div class="load-more-container">
+
+        <button id="loadMoreBtn" class="secondary-btn">
+            Load More
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTION ================= -->
+
+<section id="collections" class="collection-section">
+
+    <div class="collection-card large">
+
+        <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
+            alt=""
+        >
+
+        <div>
+            <span>WOMEN</span>
+            <h2>Elegance<br>Redefined.</h2>
+
+            <button class="collection-btn">
+                Explore
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="collection-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=80"
+            alt=""
+        >
+
+        <div>
+            <span>MEN</span>
+            <h2>Modern<br>Essentials.</h2>
+
+            <button class="collection-btn">
+                Explore
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <div>
+
+        <span>JOIN NOVA</span>
+
+        <h2>
+            Stay ahead of
+            <strong>the trend.</strong>
+        </h2>
+
+        <p>
+            Get exclusive access to new collections,
+            special offers and fashion inspiration.
+        </p>
+
+    </div>
+
+    <form id="newsletterForm">
+
+        <input
+            type="email"
+            id="emailInput"
+            placeholder="Your email address"
+            required
+        >
+
+        <button>
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+    <div class="footer-logo">
+        NOVA<span>.</span>
+    </div>
+
+    <p>
+        Modern fashion for modern people.
+    </p>
+
+    <div class="socials">
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+    </div>
+
+    <small>
+        © 2026 NOVA. All rights reserved.
+    </small>
+
+</footer>
+
+
+<!-- ================= CART SIDEBAR ================= -->
+
+<div id="cartOverlay" class="overlay"></div>
+
+<aside id="cartSidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+
+        <div>
+            <span>YOUR BAG</span>
+            <h2>Shopping Cart</h2>
+        </div>
+
+        <button id="closeCart">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <div id="cartItems" class="cart-items">
+
+        <!-- JavaScript -->
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="summary">
+
+            <div>
+                <span>Subtotal</span>
+                <strong id="subtotal">$0.00</strong>
+            </div>
+
+            <div>
+                <span>Shipping</span>
+                <strong id="shipping">$0.00</strong>
+            </div>
+
+            <div>
+                <span>Discount</span>
+                <strong id="discount">$0.00</strong>
+            </div>
+
+            <hr>
+
+            <div class="total">
+                <span>Total</span>
+                <strong id="total">$0.00</strong>
+            </div>
+
+        </div>
+
+        <button id="checkoutBtn" class="checkout-btn">
+            Checkout
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalContent">
+
+            <!-- JavaScript -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Added to cart
+    </span>
+
+</div>
+
+
+<!-- ================= LOADING ================= -->
+
+<div id="loading" class="loading">
+
+    <div class="loader"></div>
+
+    <p>
+        Loading collection...
+    </p>
+
+</div>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
