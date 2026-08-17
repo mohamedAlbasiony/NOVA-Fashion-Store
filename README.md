@@ -26,8 +26,6 @@
 ## 🚀 Live Demo & Repository
 
 * **Live Demo:** [https://mohamedalbasiony.github.io/NOVA-Fashion-Store/]
-* **Repository:** [Insert GitHub Repo Link Here]
-
 ---
 
 ## 📸 Preview
